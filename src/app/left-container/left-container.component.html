@@ -1,0 +1,31 @@
+<div class="left-container">
+    <div class="left-nav-bar">
+        <div class="search-icon" (click)="onSearch(location.value)"><img src="search.png" alt=""></div>
+        <div class="search-input"><input type="text" placeholder="Search for places..." #location (keyup.Enter)="onSearch(location.value)"> </div>
+        <div class="search-location" (click)="onSearch(location.value)"><img src="google-maps.png" alt=""></div>
+
+    </div>
+    <div class="left-data-box">
+        <div class="temp-data">
+            <div class="temp-img"><img src={{this.weatherService.temperatureData.summaryimage}} alt="summaryImg"></div>
+            <div class="temp-value">{{this.weatherService.celsius == true ? this.weatherService.temperatureData.temperature :this.weatherService.celsiusToFahrenheit(this.weatherService.temperatureData.temperature )}}<sup>{{this.weatherService.celsius== true ? "°C":"°F"}}</sup></div>
+            <div class="day-time">{{this.weatherService.temperatureData.day}}, <span>{{this.weatherService.temperatureData.time}}</span></div>
+        </div>
+        <hr>
+        <div class="other-details">
+            <div class="temp-summary">
+                <div class="temp-summary-pharse-img"><fa-icon [icon]="faCloud" style="color: #4060d2;"></fa-icon></div>
+                <div class="temp-summary-value">{{this.weatherService.temperatureData.summary}}</div>
+            </div>
+            <!-- <div class="temp-rain-stats">
+                <div class="temp-rain-img"><fa-icon [icon]="faCloudRain" style="color: #4060d2;"></fa-icon></div>
+                <div class="temp-rain-value">Rain - {{this.weatherService.temperatureData.rainpercent}}</div>
+            </div> -->
+
+            <div class="location-details"></div>
+              <div class="location-details-img"><img src="pune-1625115438.jpg" alt=""></div>
+              <div class="location-details-name">{{this.weatherService.temperatureData.location}}</div>
+        </div>
+
+    </div>
+</div>

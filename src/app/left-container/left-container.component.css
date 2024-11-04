@@ -1,0 +1,165 @@
+left-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-nav-bar {
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+
+    img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.search-icon {
+    flex: 2;
+    text-align: right;
+    margin-right: 8px;
+}
+
+.search-input {
+    flex: 4;
+}
+
+.search-input input {
+    border: none;
+    padding: 8px;
+    font-size: 11px;
+}
+
+.search-location {
+    flex: 2;
+    text-align: center;
+}
+
+.search-location :hover {
+    /* background-color: #f6f6f6; */
+    padding: 1px;
+    /* padding-top: 8px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px; */
+    border-radius: 100px;
+}
+
+/*=============================================================================================================
+*/
+/*Css for left data container data box*/
+.left-data-box {
+    flex: 12;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-right: 30px;
+
+
+}
+
+/*Temp data img , value ,Day-time*/
+.temp-data {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.temp-img {
+    flex: 2;
+
+    img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+.temp-value {
+    flex: 1;
+    font-size: 62px;
+    font-weight: normal;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.day-time {
+    flex: 1;
+    font-weight: bold;
+    font-size: medium;
+    color: black;
+
+    span {
+        color: #dddddd;
+    }
+}
+
+/* hr{
+    margin-top: 20px;
+    margin-bottom: 20px;
+} */
+
+/*========================================================================================================================*/
+/*Temp details: summary ,rain value , location img and Location details*/
+.other-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.temp-summary {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    font-size: small;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.temp-summary-pharse-img {
+    margin-right: 10px;
+}
+
+.temp-rain-stats {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    font-size: small;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.temp-rain-img {
+    margin-right: 12px;
+}
+
+.location-details {
+    flex: 4;
+    margin-top: 10px;
+    margin-bottom: 6px;
+}
+
+.location-details-img {
+    img {
+        height: 100px;
+        width: 240px;
+        border-radius: 20px;
+    }
+}
+
+.location-details-name {
+    margin-top: -60px;
+    margin-left: 70px;
+    font-size: medium;
+    font-weight: bold;
+    color: #ffffff;
+}

@@ -1,0 +1,94 @@
+<!-- NavBar -->
+<div class="right-container">
+    <div class="right-nav-bar">
+        <div class="nav-bar-tabs">
+            <div class="today" (click)="onToday()" [className]="this.weatherService.today==true?'today today-active':'today'">Today</div>
+            <div class="week" (click)="onWeek()" [className]="this.weatherService.week==true?'week week-active':'week'">Week</div>
+            <div class="underline" [className]="this.weatherService.today==true?'underline underline-today':'underline underline-week'">
+            </div>
+        </div>
+        <div class="nav-bar-temp">
+            <div class="celsius" (click)="onCelsius()" [className]="this.weatherService.celsius==true?'celsius celsius-active':'celsius'">°C
+            </div>
+            <div class="fahrenheit" (click)="onFahrenheit()"
+                [className]="this.weatherService.fahrenheit==true?'fahrenheit fahrenheit-active':'fahrenheit'">°F</div>
+            <div class="profile-image">
+                <img src="boy.png" alt="profile-image">
+            </div>
+        </div>
+    </div>
+
+    <!-------------------------------------------------------------------------------------------------------------->
+
+    <div class="right-data-box">
+        <div class="temp-week-card-box" *ngIf="this.weatherService.week==true">
+            <div class="temp-card" *ngFor="let card of weatherService.weekData">
+                <div class="temp-card-day">{{card.day}}</div>
+                <div class="temp-card-temp-img"><img src={{card.summaryimage}} alt=""></div>
+                <div class="temp-card-temp-value">
+                    <span class="temp-max">{{this.weatherService.celsius == true ? card.tempmax : this.weatherService.celsiusToFahrenheit(card.tempmax)}}° </span>
+                    <span class="temp-min">{{this.weatherService.celsius == true ? card.tempmin : this.weatherService.celsiusToFahrenheit(card.tempmin)}}°</span>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="temp-today-card-box" *ngIf="this.weatherService.today == true">
+            <div class="temp-card" *ngFor="let card of weatherService.todayData">
+                <div class="temp-card-day">{{card.time}}</div>
+                <div class="temp-card-temp-img"><img src={{card.summaryimage}} alt=""></div>
+                <div class="temp-card-temp-value">{{this.weatherService.celsius == true ? card.temperature : this.weatherService.celsiusToFahrenheit(card.temperature)}}{{this.weatherService.celsius== true ? "°C":"°F"}}</div>
+            </div> 
+        </div>
+
+        <div class="today-highlight">
+            <div class="today-highlight-title">Today's Highlight</div>
+            <div class="today-highlight-card">
+                <div class="today-card">
+                    <div class="today-card-title">UV Index</div>
+                    <div class="gauge">
+                        <div class="gauge_body">
+                            <div class="gauge_fill"></div>
+                            <div class="gauge_cover"></div>
+                        </div>
+                    </div>
+                    <div class="today-card-value">{{weatherService.todaysHighLight.uvindex}}</div>
+                </div>
+                <div class="today-card">
+                    <div class="today-card-title">Wind Status</div>
+                    <div class="wind-value" style="align-self: self-start; margin-left: 20px;">{{this.weatherService.todaysHighLight.windstatus}}<span class="unit"> km/h</span></div>
+                    <div class="wind-logo"><img src="wind.png" alt=""></div>
+                </div>
+                <div class="today-card">
+                    <div class="today-card-title">Sunrise & Sunset</div>
+                    <div class="sunrise-sunset-value">
+                        <div class="sunrise">
+                            <div class="sunrise-img"><img src="arrow.png" alt=""></div>
+                            <div class="sunrise-time">{{this.weatherService.todaysHighLight.sunrise}} AM</div>
+                        </div>
+                        <div class="sunset">
+                            <div class="sunset-img"><img src="arrow (1).png" alt=""></div>
+                            <div class="sunset-time">{{this.weatherService.todaysHighLight.sunset}} PM</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="today-highlight-card">
+                <div class="today-card">
+                    <div class="today-card-title">Humidity</div>
+                    <div class="wind-value" style="align-self: self-start; margin-left: 20px;">{{this.weatherService.todaysHighLight.humidity}} <sup class="percentage-unit" style="margin-top: -10px;">%</sup></div>
+                    <div class="humidity-sum" style="align-self: self-start; margin-left: 20px;">{{this.weatherService.todaysHighLight.humidity < 50 ? "Normal":"High"}} <span><fa-icon [icon]="faThumbsUp" style="color: #4060d2;"></fa-icon></span></div>
+                </div>
+                <div class="today-card">
+                    <div class="today-card-title">Visibility</div>
+                    <div class="wind-value" style="align-self: self-start; margin-left: 20px;">{{this.weatherService.todaysHighLight.visibility}} <span class="unit"> km/h</span></div>
+                    <div class="humidity-sum" style="align-self: self-start; margin-left: 20px;">{{this.weatherService.todaysHighLight.visibility > 5 ? "Normal":"Low" }} <span><fa-icon [icon]="faFaceFrown" style="color: #f8dc0a;"></fa-icon></span></div>
+                </div>
+                <div class="today-card">
+                    <div class="today-card-title">Air Quality</div>
+                    <div class="wind-value" style="align-self: self-start; margin-left: 20px;">{{this.weatherService.todaysHighLight.airquality}}</div>
+                    <div class="humidity-sum" style="align-self: self-start; margin-left: 20px;">{{this.weatherService.todaysHighLight.airquality < 100 ? "Satisfactory":"Unhealthy"}} <span><fa-icon [icon]="faThumbsDown" style="color: #4060d2;"></fa-icon></span></div>
+            </div>
+        </div>
+    </div>
+</div>
