@@ -142,7 +142,7 @@ export class WetherService {
     // console.log(this.temperatureData);
     // console.log(this.weekData);
     // console.log(this.todayData);
-    //  console.log(this.weatherDetails);
+    //console.log(this.weatherDetails);
     // console.log(this.todaysHighLight)
 
   }
