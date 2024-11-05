@@ -28,9 +28,6 @@ export class RightContainerComponent {
   faSmile:any=faSmile;
   faFaceFrown:any=faFaceFrown
 
-  
-  
-
   //functions to control tab value
   onToday() {
     this.weatherService.week=false;
@@ -42,15 +39,12 @@ export class RightContainerComponent {
   }
 
   //function to control temp values
-
   onCelsius() {
     this.weatherService.celsius = true;
     this.weatherService.fahrenheit = false
   }
-
   onFahrenheit() {
     this.weatherService.fahrenheit = true;
     this.weatherService.celsius = false;
   }
-
 }
