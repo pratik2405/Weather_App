@@ -16,7 +16,6 @@ import { environment } from '../../environments/environment';
 })
 export class WetherService {
 
-
   //Variable  which will filled by API endpoints
   locationDetails?: LocationDetails;
   weatherDetails?: WeatherDetails;
@@ -157,9 +156,9 @@ export class WetherService {
 
   // Method to get location Details from API using the variable cityname a sper INPUT
   getLocationDetails(cityName: string, language: string): Observable<LocationDetails> {
-    return this.httpClient.get<LocationDetails>(EnvironmetalVariable.weatherApiLocationURL, {
-      headers: new HttpHeaders().set(EnvironmetalVariable.xRapidApiKeyName, EnvironmetalVariable.xRapidApiKeyValue)
-        .set(EnvironmetalVariable.xRapidApiHostName, EnvironmetalVariable.xRapidApiHostValue),
+    return this.httpClient.get<LocationDetails>(environment.weatherApiLocationURL, {
+      headers: new HttpHeaders().set(environment.xRapidApiKeyName, environment.xRapidApiKeyValue)
+        .set(environment.xRapidApiHostName, environment.xRapidApiHostValue),
       params: new HttpParams()
         .set('query', cityName)
         .set('language', language)
@@ -167,10 +166,10 @@ export class WetherService {
   }
 
   getWeatherReport(date: string, latitude: number, longitude: number, language: string, units: string): Observable<WeatherDetails> {
-    return this.httpClient.get<WeatherDetails>(EnvironmetalVariable.weatherApiForcastURL, {
+    return this.httpClient.get<WeatherDetails>(environment.weatherApiForcastURL, {
       headers: new HttpHeaders()
-        .set(EnvironmetalVariable.xRapidApiKeyName, EnvironmetalVariable.xRapidApiKeyValue)
-        .set(EnvironmetalVariable.xRapidApiHostName, EnvironmetalVariable.xRapidApiHostValue),
+        .set(environment.xRapidApiKeyName, environment.xRapidApiKeyValue)
+        .set(environment.xRapidApiHostName, environment.xRapidApiHostValue),
       params: new HttpParams()
         .set('date', date)
         .set('latitude', latitude)
