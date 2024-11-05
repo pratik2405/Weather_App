@@ -55,7 +55,7 @@ export class WetherService {
     // var baseaddress = '';
     //image names:
     var cloudySunny = 'cloudy.png';
-    var rainSunny = 'cloudy (1).png';
+    var rainSunny = 'cloudy(1).png';
     var windy = 'windsum.png';
     var sunny = 'sun.png';
     var rainy = 'rainy-day-sum.png';

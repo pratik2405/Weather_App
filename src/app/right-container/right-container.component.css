@@ -12,7 +12,7 @@
     justify-content: space-between;
     align-items: center;
 }
-/*css for nav bar tabs*/
+
 .nav-bar-tabs {
     display: flex;
     flex-direction: row;
