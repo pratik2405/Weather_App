@@ -7,7 +7,6 @@ import { TodayData } from '../Models/TodayData';
 import { WeekData } from '../Models/WeekData';
 import { TodaysHighlights } from '../Models/TodaysHighlights';
 import { Observable } from 'rxjs';
-import { EnvironmetalVariable } from '../Environment/EnvironmentVariable';
 import { environment } from '../../environments/environment';
 
 
