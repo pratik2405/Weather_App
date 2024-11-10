@@ -1,8 +1,8 @@
 <div class="left-container">
     <div class="left-nav-bar">
-        <div class="search-icon" (click)="onSearch(location.value)"><img src="search.png" alt=""></div>
-        <div class="search-input"><input type="text" placeholder="Search for places..." #location (keyup.Enter)="onSearch(location.value)"> </div>
-        <div class="search-location" (click)="onSearch(location.value)"><img src="google-maps.png" alt=""></div>
+        <div class="search-icon" (click)="onSearch(location)"><img src="search.png" alt=""></div>
+        <div class="search-input"><input type="text" placeholder="Search for places..." [(ngModel)]="location" (keyup.Enter)="onSearch(location)"> </div>
+        <div class="search-location" (click)="onSearch(location)"><img src="google-maps.png" alt=""></div>
 
     </div>
     <div class="left-data-box">
